@@ -1,6 +1,7 @@
 import express from "express";
 import bodyParser from "body-parser";
 import cors from "cors";
+import { connection } from "./db/database";
 
 export class Server {
   
@@ -24,7 +25,12 @@ export class Server {
   }
 
   private async connectToDatabase(): Promise<void> {
-
+    connection.connect((err) => {
+      if (err) {
+        console.error("No se pudo conectar a la base de datos. ", err);
+      }
+      console.info("Conexión a base de datos establecida exitosamente.");
+    });
   }
 
   public async listen(): Promise<void> {
