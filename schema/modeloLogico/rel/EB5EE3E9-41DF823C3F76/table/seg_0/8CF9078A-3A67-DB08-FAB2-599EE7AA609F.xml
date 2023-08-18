@@ -18,6 +18,53 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="nombres" id="D01ED1C5-533F-1BBD-50E2-9B12836F2469">
+<createdBy>jorge</createdBy>
+<createdTime>2023-08-18 03:30:07 UTC</createdTime>
+<ownerDesignName>modeloLogico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>225 CHAR</dataTypeSize>
+<ownDataTypeParameters>225 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="fecha_nacimiento" id="7832658F-5120-1903-FC65-E229279C90CF">
+<createdBy>jorge</createdBy>
+<createdTime>2023-08-18 03:47:00 UTC</createdTime>
+<ownerDesignName>modeloLogico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="id_partido" id="5A157B62-F822-C34B-9205-01FD801AA193">
+<createdBy>jorge</createdBy>
+<createdTime>2023-08-18 03:47:00 UTC</createdTime>
+<ownerDesignName>modeloLogico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="43980F6C-E118-5FB7-678D-FE816CFECA61" referredColumn="45B72FF6-728A-9ED9-F954-5BE3A4DFCA89"/>
+</associations>
+</Column>
+<Column name="id_cargo" id="08C51E87-B8AC-4C73-5ED6-4F45E369EB5B">
+<createdBy>jorge</createdBy>
+<createdTime>2023-08-18 03:47:00 UTC</createdTime>
+<ownerDesignName>modeloLogico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="FC8D42FD-0F26-644A-B715-A2ED756DAF18" referredColumn="7C19B798-9900-A634-5F22-E34CFE8C9A35"/>
+</associations>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="CF67EA6F-F36E-748D-DF8B-EDEAB9B7CD7C" name="Candidato_PK">
@@ -29,6 +76,26 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="544381B9-EB90-52D8-691F-588CDCACE94E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="95A0A170-0284-DD1F-EC72-05F87A99D334" name="id_partido">
+<createdBy>jorge</createdBy>
+<createdTime>2023-08-18 03:55:21 UTC</createdTime>
+<ownerDesignName>modeloLogico</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5A157B62-F822-C34B-9205-01FD801AA193"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="41B9DD5B-9BF9-2CAE-6ECD-C99BFB49928E" name="Candidato_Cargo_FK">
+<createdBy>jorge</createdBy>
+<createdTime>2023-08-18 03:56:37 UTC</createdTime>
+<ownerDesignName>modeloLogico</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="08C51E87-B8AC-4C73-5ED6-4F45E369EB5B"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

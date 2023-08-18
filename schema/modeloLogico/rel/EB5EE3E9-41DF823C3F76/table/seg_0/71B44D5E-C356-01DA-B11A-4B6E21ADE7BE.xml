@@ -1,0 +1,46 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="71B44D5E-C356-01DA-B11A-4B6E21ADE7BE" name="Cargo">
+<createdBy>jorge</createdBy>
+<createdTime>2023-08-18 03:34:09 UTC</createdTime>
+<ownerDesignName>modeloLogico</ownerDesignName>
+<ordsAlias>table_5</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="7C19B798-9900-A634-5F22-E34CFE8C9A35">
+<createdBy>jorge</createdBy>
+<createdTime>2023-08-18 03:35:03 UTC</createdTime>
+<ownerDesignName>modeloLogico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cargo" id="9B60B5DA-88AF-EB6E-E763-85389CE686D6">
+<createdBy>jorge</createdBy>
+<createdTime>2023-08-18 03:35:03 UTC</createdTime>
+<ownerDesignName>modeloLogico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="FCD4AAF6-287F-5B2A-C309-4CFE2093560B" name="Cargo_PK">
+<createdBy>jorge</createdBy>
+<createdTime>2023-08-18 03:35:03 UTC</createdTime>
+<ownerDesignName>modeloLogico</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7C19B798-9900-A634-5F22-E34CFE8C9A35"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

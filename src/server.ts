@@ -2,6 +2,7 @@ import express from "express";
 import bodyParser from "body-parser";
 import cors from "cors";
 import { connection } from "./db/database";
+import { eleccionesRouter } from "./routes/eleccionesRoutes";
 
 export class Server {
   
@@ -22,6 +23,7 @@ export class Server {
     this.app.use(express.urlencoded({ extended: false }));
     // CORS
     this.app.use(cors());
+    this.app.use("", eleccionesRouter);
   }
 
   private async connectToDatabase(): Promise<void> {
