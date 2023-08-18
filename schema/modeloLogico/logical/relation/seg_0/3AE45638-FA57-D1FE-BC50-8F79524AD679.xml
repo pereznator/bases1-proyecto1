@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="mesa-voto" directorySegmentName="seg_0" id="3AE45638-FA57-D1FE-BC50-8F79524AD679">
+<createdBy>jorge</createdBy>
+<createdTime>2023-08-18 01:35:34 UTC</createdTime>
+<ownerDesignName>modeloLogico</ownerDesignName>
+<engineerTo>
+<item key="EB5EE3E9-7F37-BA7D-B332-41DF823C3F76" value="true"/>
+</engineerTo>
+<sourcePk>F230D16E-4ABF-0485-D6BC-661A9E2F8375</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>752149E9-22A0-0C89-53CA-81A01A5FC629</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>C67510D0-4BAD-9A32-C0A1-A38152D15E8A</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

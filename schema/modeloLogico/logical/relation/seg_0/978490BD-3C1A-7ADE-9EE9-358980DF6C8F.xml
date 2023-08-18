@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="candidato-cargo" directorySegmentName="seg_0" id="978490BD-3C1A-7ADE-9EE9-358980DF6C8F">
+<createdBy>jorge</createdBy>
+<createdTime>2023-08-18 01:14:17 UTC</createdTime>
+<ownerDesignName>modeloLogico</ownerDesignName>
+<engineerTo>
+<item key="EB5EE3E9-7F37-BA7D-B332-41DF823C3F76" value="true"/>
+</engineerTo>
+<sourcePk>D244EE1E-443E-FB7A-BC89-DE50D6F8194D</sourcePk>
+<targetPk>1F964B5C-62B8-7B9C-D70D-6E1C5C8FB006</targetPk>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>true</optionalTarget>
+<sourceCardinality>*</sourceCardinality>
+<sourceEntity>F88DE269-F51C-D45A-F867-21CCD9520BE3</sourceEntity>
+<targetCardinalityString>1</targetCardinalityString>
+<targetEntity>9CB237E1-C3EA-7961-25FA-0ADD3D9165BB</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="partido-candidato" directorySegmentName="seg_0" id="82DEA1DD-E8D5-889D-4534-EBB5CA7F4E53">
+<createdBy>jorge</createdBy>
+<createdTime>2023-08-18 01:31:15 UTC</createdTime>
+<ownerDesignName>modeloLogico</ownerDesignName>
+<engineerTo>
+<item key="EB5EE3E9-7F37-BA7D-B332-41DF823C3F76" value="true"/>
+</engineerTo>
+<sourcePk>A292D704-F48C-4088-1088-6B47FB8893F7</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>B0382C4A-8E33-AE8B-E7DC-B4F4D59B96B4</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>F88DE269-F51C-D45A-F867-21CCD9520BE3</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

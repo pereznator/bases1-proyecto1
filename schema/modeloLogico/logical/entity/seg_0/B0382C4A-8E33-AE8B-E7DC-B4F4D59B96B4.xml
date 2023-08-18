@@ -1,0 +1,73 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="B0382C4A-8E33-AE8B-E7DC-B4F4D59B96B4" name="Partido">
+<createdBy>jorge</createdBy>
+<createdTime>2023-08-18 00:52:27 UTC</createdTime>
+<ownerDesignName>modeloLogico</ownerDesignName>
+<engineerTo>
+<item key="EB5EE3E9-7F37-BA7D-B332-41DF823C3F76" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id" id="D2A986F3-E05E-9F21-BA16-34634A75B60A">
+<createdBy>jorge</createdBy>
+<createdTime>2023-08-18 01:04:32 UTC</createdTime>
+<ownerDesignName>modeloLogico</ownerDesignName>
+<engineerTo>
+<item key="EB5EE3E9-7F37-BA7D-B332-41DF823C3F76" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nombre" id="AFF49A98-5711-82BA-8862-96B2CE0FD7AA">
+<createdBy>jorge</createdBy>
+<createdTime>2023-08-18 01:05:05 UTC</createdTime>
+<ownerDesignName>modeloLogico</ownerDesignName>
+<engineerTo>
+<item key="EB5EE3E9-7F37-BA7D-B332-41DF823C3F76" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="siglas" id="BFDEA2E9-2D97-8F95-7772-CB03CD718B25">
+<createdBy>jorge</createdBy>
+<createdTime>2023-08-18 01:04:55 UTC</createdTime>
+<ownerDesignName>modeloLogico</ownerDesignName>
+<engineerTo>
+<item key="EB5EE3E9-7F37-BA7D-B332-41DF823C3F76" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="fundacion" id="8F4543BA-76E2-26A4-1ECF-B675CC3F4CB7">
+<createdBy>jorge</createdBy>
+<createdTime>2023-08-18 01:05:25 UTC</createdTime>
+<ownerDesignName>modeloLogico</ownerDesignName>
+<engineerTo>
+<item key="EB5EE3E9-7F37-BA7D-B332-41DF823C3F76" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="A292D704-F48C-4088-1088-6B47FB8893F7" name="Partido PK">
+<createdBy>jorge</createdBy>
+<createdTime>2023-08-18 01:04:50 UTC</createdTime>
+<ownerDesignName>modeloLogico</ownerDesignName>
+<engineerTo>
+<item key="EB5EE3E9-7F37-BA7D-B332-41DF823C3F76" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>D2A986F3-E05E-9F21-BA16-34634A75B60A</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

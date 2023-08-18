@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="modeloLogico" id="46993F63-8F94-DFC8-11EF-D5E60FF175C8" version="3.5">
+<createdBy>jorge</createdBy>
+<createdTime>2023-08-18 00:18:25 UTC</createdTime>
+<ownerDesignName>modeloLogico</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>46993F63-8F94-DFC8-11EF-D5E60FF175C8</designId>
+</OSDM_Design>

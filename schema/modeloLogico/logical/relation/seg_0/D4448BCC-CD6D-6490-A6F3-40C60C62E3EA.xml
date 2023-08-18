@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="departamento-mesa" directorySegmentName="seg_0" id="D4448BCC-CD6D-6490-A6F3-40C60C62E3EA">
+<createdBy>jorge</createdBy>
+<createdTime>2023-08-18 01:29:46 UTC</createdTime>
+<ownerDesignName>modeloLogico</ownerDesignName>
+<engineerTo>
+<item key="EB5EE3E9-7F37-BA7D-B332-41DF823C3F76" value="true"/>
+</engineerTo>
+<sourcePk>7DE8AEB0-1300-BBCC-F0DB-C956F786D023</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>2909C1CE-F735-4F5B-0CD8-D1370495CE13</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>752149E9-22A0-0C89-53CA-81A01A5FC629</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

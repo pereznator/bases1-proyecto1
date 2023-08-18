@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="ciudadano-voto" directorySegmentName="seg_0" id="B71CB566-87D3-421E-40FA-991D5F1826B0">
+<createdBy>jorge</createdBy>
+<createdTime>2023-08-18 01:37:07 UTC</createdTime>
+<ownerDesignName>modeloLogico</ownerDesignName>
+<engineerTo>
+<item key="EB5EE3E9-7F37-BA7D-B332-41DF823C3F76" value="true"/>
+</engineerTo>
+<sourcePk>817AD083-C39C-5526-4085-130F20749F58</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>FAFE86E5-541C-2BFD-F7EC-562AD71578AC</sourceEntity>
+<targetCardinalityString>1</targetCardinalityString>
+<targetEntity>C67510D0-4BAD-9A32-C0A1-A38152D15E8A</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

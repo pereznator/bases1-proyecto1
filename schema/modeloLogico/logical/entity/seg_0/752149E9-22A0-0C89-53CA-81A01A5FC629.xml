@@ -1,0 +1,67 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="752149E9-22A0-0C89-53CA-81A01A5FC629" name="Mesa">
+<createdBy>jorge</createdBy>
+<createdTime>2023-08-18 00:52:08 UTC</createdTime>
+<ownerDesignName>modeloLogico</ownerDesignName>
+<engineerTo>
+<item key="EB5EE3E9-7F37-BA7D-B332-41DF823C3F76" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id" id="B4816E32-3BB4-090C-EF73-E07EE2071174">
+<createdBy>jorge</createdBy>
+<createdTime>2023-08-18 01:03:12 UTC</createdTime>
+<ownerDesignName>modeloLogico</ownerDesignName>
+<engineerTo>
+<item key="EB5EE3E9-7F37-BA7D-B332-41DF823C3F76" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_departamento" id="FAE054D7-1149-1783-6CFF-3693EF6861DB">
+<createdBy>jorge</createdBy>
+<createdTime>2023-08-18 01:03:21 UTC</createdTime>
+<ownerDesignName>modeloLogico</ownerDesignName>
+<engineerTo>
+<item key="EB5EE3E9-7F37-BA7D-B332-41DF823C3F76" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id1" id="A460E5C9-70A4-9837-8F62-51A19F8BDE79">
+<createdBy>jorge</createdBy>
+<createdTime>2023-08-18 01:29:46 UTC</createdTime>
+<generatorID>D4448BCC-CD6D-6490-A6F3-40C60C62E3EA</generatorID>
+<ownerDesignName>modeloLogico</ownerDesignName>
+<engineerTo>
+<item key="EB5EE3E9-7F37-BA7D-B332-41DF823C3F76" value="true"/>
+</engineerTo>
+<referedAttribute>B700469C-9D6B-EF57-298E-DE1CF8194362</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="F230D16E-4ABF-0485-D6BC-661A9E2F8375" name="Mesa PK">
+<createdBy>jorge</createdBy>
+<createdTime>2023-08-18 01:03:18 UTC</createdTime>
+<ownerDesignName>modeloLogico</ownerDesignName>
+<engineerTo>
+<item key="EB5EE3E9-7F37-BA7D-B332-41DF823C3F76" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>B4816E32-3BB4-090C-EF73-E07EE2071174</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>
