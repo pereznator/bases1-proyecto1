@@ -8,6 +8,6 @@
     "outDir": "dist"
   },
   "lib": ["es2015"],
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "src/db/scripts/db.ddl"],
   "exclude": ["node_modules", "**/*.spec.ts"]
 }

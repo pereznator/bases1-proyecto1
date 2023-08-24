@@ -16,31 +16,35 @@
 <objectViews>
 <OView class="oracle.dbtools.crest.swingui.relational.TVTable" oid="48DA584D-7566-00F7-18A1-AFAB3791CDFF" otype="Table" vid="2EF21E49-CC5F-D4F9-78C3-4EEFF2EA9E1E">
 <hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
-<bounds x="120" y="190" width="170" height="110"/>
+<bounds x="1" y="0" width="232" height="110"/>
 </OView>
 <OView class="oracle.dbtools.crest.swingui.relational.TVTable" oid="6F02913B-CE81-46FC-B36F-A859CC90806B" otype="Table" vid="7116C115-FD99-F416-7F3F-BAD6F1E5786E">
 <hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
-<bounds x="110" y="170" width="170" height="110"/>
+<bounds x="623" y="217" width="196" height="110"/>
 </OView>
 <OView class="oracle.dbtools.crest.swingui.relational.TVTable" oid="71B44D5E-C356-01DA-B11A-4B6E21ADE7BE" otype="Table" vid="CE70AEF8-EFFA-A816-5AD8-883596438BE9">
 <hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
-<bounds x="90" y="130" width="170" height="110"/>
+<bounds x="635" y="6" width="210" height="110"/>
+</OView>
+<OView class="oracle.dbtools.crest.swingui.relational.TVTable" oid="7C171D0B-CFCF-AB79-96E9-7C5C004F09E8" otype="Table" vid="35F750C6-395B-CBBB-B055-680F228230CA">
+<hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
+<bounds x="865" y="8" width="317" height="353"/>
 </OView>
 <OView class="oracle.dbtools.crest.swingui.relational.TVTable" oid="8CF9078A-3A67-DB08-FAB2-599EE7AA609F" otype="Table" vid="55D38665-BC57-9BA9-94F2-3D05BE0503F7">
 <hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
-<bounds x="50" y="50" width="170" height="110"/>
+<bounds x="335" y="0" width="258" height="144"/>
 </OView>
 <OView class="oracle.dbtools.crest.swingui.relational.TVTable" oid="93FC613D-1720-D41C-8836-E5E8B38F93AE" otype="Table" vid="9E801BCB-2435-00A6-DCAF-091B3967144E">
 <hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
-<bounds x="80" y="110" width="170" height="110"/>
+<bounds x="590" y="364" width="267" height="110"/>
 </OView>
 <OView class="oracle.dbtools.crest.swingui.relational.TVTable" oid="E0564EAA-39FE-BB09-AB24-2C66CD692942" otype="Table" vid="022C01B0-5480-81BB-D55E-B15C5C532DB9">
 <hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
-<bounds x="130" y="210" width="170" height="110"/>
+<bounds x="378" y="184" width="170" height="110"/>
 </OView>
 <OView class="oracle.dbtools.crest.swingui.relational.TVTable" oid="E974A63B-73DE-A4AE-1474-80205B6EB631" otype="Table" vid="4DD61D00-0D51-F341-8001-A09E6AF4B65D">
 <hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
-<bounds x="100" y="150" width="170" height="110"/>
+<bounds x="4" y="137" width="227" height="150"/>
 </OView>
 </objectViews>
 <connectors>
@@ -49,8 +53,8 @@
 <backgroundColor>-16777216</backgroundColor>
 <lineWidth>1</lineWidth>
 <points>
-<point x="160" y="160"/>
-<point x="160" y="210"/>
+<point x="463" y="144"/>
+<point x="463" y="184"/>
 </points>
 </Connector>
 <Connector class="oracle.dbtools.crest.swingui.relational.TVFKRelation" oid="43980F6C-E118-5FB7-678D-FE816CFECA61" otype="FKIndexAssociation" vid_source="2EF21E49-CC5F-D4F9-78C3-4EEFF2EA9E1E" vid_target="55D38665-BC57-9BA9-94F2-3D05BE0503F7">
@@ -58,8 +62,8 @@
 <backgroundColor>-16777216</backgroundColor>
 <lineWidth>1</lineWidth>
 <points>
-<point x="185" y="190"/>
-<point x="185" y="160"/>
+<point x="233" y="55"/>
+<point x="335" y="55"/>
 </points>
 </Connector>
 <Connector class="oracle.dbtools.crest.swingui.relational.TVFKRelation" oid="518E1746-0531-0569-C188-F63DA2789E04" otype="FKIndexAssociation" vid_source="7116C115-FD99-F416-7F3F-BAD6F1E5786E" vid_target="022C01B0-5480-81BB-D55E-B15C5C532DB9">
@@ -67,8 +71,8 @@
 <backgroundColor>-16777216</backgroundColor>
 <lineWidth>1</lineWidth>
 <points>
-<point x="280" y="245"/>
-<point x="130" y="245"/>
+<point x="623" y="255"/>
+<point x="548" y="255"/>
 </points>
 </Connector>
 <Connector class="oracle.dbtools.crest.swingui.relational.TVFKRelation" oid="8543A61C-D50D-5E96-5E25-BC080457B7C0" otype="FKIndexAssociation" vid_source="9E801BCB-2435-00A6-DCAF-091B3967144E" vid_target="7116C115-FD99-F416-7F3F-BAD6F1E5786E">
@@ -76,8 +80,8 @@
 <backgroundColor>-16777216</backgroundColor>
 <lineWidth>1</lineWidth>
 <points>
-<point x="250" y="195"/>
-<point x="110" y="195"/>
+<point x="721" y="364"/>
+<point x="721" y="327"/>
 </points>
 </Connector>
 <Connector class="oracle.dbtools.crest.swingui.relational.TVFKRelation" oid="A31A035B-FA23-6F2F-B6B9-D990E56D530B" otype="FKIndexAssociation" vid_source="4DD61D00-0D51-F341-8001-A09E6AF4B65D" vid_target="022C01B0-5480-81BB-D55E-B15C5C532DB9">
@@ -85,8 +89,8 @@
 <backgroundColor>-16777216</backgroundColor>
 <lineWidth>1</lineWidth>
 <points>
-<point x="270" y="250"/>
-<point x="130" y="250"/>
+<point x="231" y="235"/>
+<point x="378" y="235"/>
 </points>
 </Connector>
 <Connector class="oracle.dbtools.crest.swingui.relational.TVFKRelation" oid="FC8D42FD-0F26-644A-B715-A2ED756DAF18" otype="FKIndexAssociation" vid_source="CE70AEF8-EFFA-A816-5AD8-883596438BE9" vid_target="55D38665-BC57-9BA9-94F2-3D05BE0503F7">
@@ -94,8 +98,8 @@
 <backgroundColor>-16777216</backgroundColor>
 <lineWidth>1</lineWidth>
 <points>
-<point x="90" y="145"/>
-<point x="220" y="145"/>
+<point x="635" y="61"/>
+<point x="593" y="61"/>
 </points>
 </Connector>
 </connectors>
@@ -126,6 +130,10 @@
 <OView class="oracle.dbtools.crest.swingui.relational.TVTable" oid="71B44D5E-C356-01DA-B11A-4B6E21ADE7BE" otype="Table" vid="84932F20-D0CB-8648-51AD-029C05159927">
 <hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
 <bounds x="805" y="63" width="170" height="110"/>
+</OView>
+<OView class="oracle.dbtools.crest.swingui.relational.TVTable" oid="7C171D0B-CFCF-AB79-96E9-7C5C004F09E8" otype="Table" vid="05AB0C0A-C16C-6728-0E89-50437BB20712">
+<hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
+<bounds x="50" y="50" width="170" height="110"/>
 </OView>
 <OView class="oracle.dbtools.crest.swingui.relational.TVTable" oid="8CF9078A-3A67-DB08-FAB2-599EE7AA609F" otype="Table" vid="7FB850E5-0529-7A2D-3ADA-76FA966AD520">
 <hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>

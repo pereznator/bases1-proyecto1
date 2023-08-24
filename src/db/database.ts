@@ -1,6 +1,6 @@
-import mysql from "mysql2";
+import { MySQL } from "./dbConfig";
 
-export const connection = mysql.createConnection({
+export const database = new MySQL({
   host: "localhost",
   user: "root",
   password: "12345678",
