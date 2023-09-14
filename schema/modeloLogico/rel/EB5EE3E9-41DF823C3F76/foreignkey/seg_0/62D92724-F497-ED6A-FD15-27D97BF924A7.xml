@@ -3,8 +3,8 @@
 <createdBy>jorge</createdBy>
 <createdTime>2023-09-14 04:03:19 UTC</createdTime>
 <ownerDesignName>modeloLogico</ownerDesignName>
-<referredTableLongName>Voto</referredTableLongName>
-<deleteRule>NO ACTION</deleteRule>
+<referredTableLongName>VOTO</referredTableLongName>
+<deleteRule>CASCADE</deleteRule>
 <referredTableID>E0564EAA-39FE-BB09-AB24-2C66CD692942</referredTableID>
 <keyObject>5D097DBD-1715-9AD5-2FE1-8B666EFCE6B0</keyObject>
 <referredKeyID>5D097DBD-1715-9AD5-2FE1-8B666EFCE6B0</referredKeyID>

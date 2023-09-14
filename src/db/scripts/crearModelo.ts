@@ -1,27 +1,14 @@
 export const sqlCrearModelo = `
--- SQLINES DEMO *** le SQL Developer Data Modeler 23.1.0.087.0806
--- SQLINES DEMO *** -08-20 16:43:00 CST
--- SQLINES DEMO *** le Database 11g
--- SQLINES DEMO *** le Database 11g
-
-
-
--- SQLINES DEMO *** no DDL - MDSYS.SDO_GEOMETRY
-
--- SQLINES DEMO *** no DDL - XMLTYPE
-
--- SQLINES LICENSE FOR EVALUATION USE ONLY
 CREATE TABLE candidato (
     id               INTEGER NOT NULL,
     nombres          VARCHAR(225) NOT NULL,
-    fecha_nacimiento DATE NOT NULL,
+    fecha_nacimiento DATETIME NOT NULL,
     id_partido       INTEGER NOT NULL,
     id_cargo         INTEGER NOT NULL
 );
 
 ALTER TABLE candidato ADD CONSTRAINT candidato_pk PRIMARY KEY ( id );
 
--- SQLINES LICENSE FOR EVALUATION USE ONLY
 CREATE TABLE cargo (
     id    INTEGER NOT NULL,
     cargo VARCHAR(225) NOT NULL
@@ -29,9 +16,8 @@ CREATE TABLE cargo (
 
 ALTER TABLE cargo ADD CONSTRAINT cargo_pk PRIMARY KEY ( id );
 
--- SQLINES LICENSE FOR EVALUATION USE ONLY
 CREATE TABLE ciudadano (
-    dpi       VARCHAR(20) NOT NULL,
+    dpi       VARCHAR(13) NOT NULL,
     nombre    VARCHAR(225) NOT NULL,
     apellido  VARCHAR(225) NOT NULL,
     direccion VARCHAR(225) NOT NULL,
@@ -42,7 +28,6 @@ CREATE TABLE ciudadano (
 
 ALTER TABLE ciudadano ADD CONSTRAINT ciudadano_pk PRIMARY KEY ( dpi );
 
--- SQLINES LICENSE FOR EVALUATION USE ONLY
 CREATE TABLE departamento (
     id           INTEGER NOT NULL,
     departamento VARCHAR(250) NOT NULL
@@ -50,7 +35,14 @@ CREATE TABLE departamento (
 
 ALTER TABLE departamento ADD CONSTRAINT departamento_pk PRIMARY KEY ( id );
 
--- SQLINES LICENSE FOR EVALUATION USE ONLY
+CREATE TABLE detalle_voto (
+    id           INTEGER NOT NULL,
+    id_voto      INTEGER NOT NULL,
+    id_candidato INTEGER NOT NULL
+);
+
+ALTER TABLE detalle_voto ADD CONSTRAINT detalle_voto_pk PRIMARY KEY ( id );
+
 CREATE TABLE mesa (
     id              INTEGER NOT NULL,
     id_departamento INTEGER NOT NULL
@@ -58,17 +50,15 @@ CREATE TABLE mesa (
 
 ALTER TABLE mesa ADD CONSTRAINT mesa_pk PRIMARY KEY ( id );
 
--- SQLINES LICENSE FOR EVALUATION USE ONLY
 CREATE TABLE partido (
     id        INTEGER NOT NULL,
     nombre    VARCHAR(225) NOT NULL,
     siglas    VARCHAR(225) NOT NULL,
-    fundacion DATE NOT NULL
+    fundacion DATETIME NOT NULL
 );
 
 ALTER TABLE partido ADD CONSTRAINT partido_pk PRIMARY KEY ( id );
 
--- SQLINES LICENSE FOR EVALUATION USE ONLY
 CREATE TABLE temporal (
     id                         INTEGER NOT NULL,
     tipo                       INTEGER NOT NULL,
@@ -80,8 +70,8 @@ CREATE TABLE temporal (
     id_partido                 INTEGER,
     nombre_partido             VARCHAR(225),
     siglas_partido             VARCHAR(225),
-    fundacion_partido          DATE,
-    dpi                        VARCHAR(20),
+    fundacion_partido          DATETIME,
+    dpi                        VARCHAR(13),
     nombre_ciudadano           VARCHAR(225),
     apellido_ciudadano         VARCHAR(225),
     direccion_ciudadano        VARCHAR(225),
@@ -90,29 +80,35 @@ CREATE TABLE temporal (
     genero_ciudadano           CHAR(1),
     id_candidato               INTEGER,
     nombres_candidato          VARCHAR(225),
-    fecha_nacimiento_candidato DATE,
+    fecha_nacimiento_candidato DATETIME,
     id_voto                    INTEGER,
-    fecha_hora_voto            DATE
+    fecha_hora_voto            DATETIME
 );
 
 ALTER TABLE temporal ADD CONSTRAINT temporal_pk PRIMARY KEY ( id );
 
--- SQLINES LICENSE FOR EVALUATION USE ONLY
 CREATE TABLE voto (
-    id           INTEGER NOT NULL,
-    id_candidato INTEGER NOT NULL,
-    dpi          VARCHAR(20) NOT NULL,
-    id_mesa      INTEGER NOT NULL,
-    fecha_hora   DATETIME NOT NULL
+    id         INTEGER NOT NULL,
+    dpi        VARCHAR(13) NOT NULL,
+    id_mesa    INTEGER NOT NULL,
+    fecha_hora DATETIME(6) NOT NULL
 );
 
-ALTER TABLE voto ADD CONSTRAINT voto_pk PRIMARY KEY ( id,
-                                                      id_candidato,
-                                                      dpi );
+ALTER TABLE voto ADD CONSTRAINT voto_pk PRIMARY KEY ( id );
 
 ALTER TABLE candidato
     ADD CONSTRAINT candidato_cargo_fk FOREIGN KEY ( id_cargo )
         REFERENCES cargo ( id )
+            ON DELETE CASCADE;
+
+ALTER TABLE detalle_voto
+    ADD CONSTRAINT detalle_voto_candidato_fk FOREIGN KEY ( id_candidato )
+        REFERENCES candidato ( id )
+            ON DELETE CASCADE;
+
+ALTER TABLE detalle_voto
+    ADD CONSTRAINT detalle_voto_voto_fk FOREIGN KEY ( id_voto )
+        REFERENCES voto ( id )
             ON DELETE CASCADE;
 
 ALTER TABLE candidato
@@ -126,10 +122,6 @@ ALTER TABLE mesa
             ON DELETE CASCADE;
 
 ALTER TABLE voto
-    ADD CONSTRAINT voto_candidato_fk FOREIGN KEY ( id_candidato )
-        REFERENCES candidato ( id );
-
-ALTER TABLE voto
     ADD CONSTRAINT voto_ciudadano_fk FOREIGN KEY ( dpi )
         REFERENCES ciudadano ( dpi )
             ON DELETE CASCADE;
@@ -139,51 +131,8 @@ ALTER TABLE voto
         REFERENCES mesa ( id )
             ON DELETE CASCADE;
 
-
 ALTER TABLE elecciones.temporal MODIFY COLUMN id int auto_increment NOT NULL;
 
-
--- SQLINES DEMO *** per Data Modeler Summary Report: 
--- 
--- SQLINES DEMO ***                         8
--- SQLINES DEMO ***                         0
--- SQLINES DEMO ***                        14
--- SQLINES DEMO ***                         0
--- SQLINES DEMO ***                         0
--- SQLINES DEMO ***                         0
--- SQLINES DEMO *** DY                      0
--- SQLINES DEMO ***                         0
--- SQLINES DEMO ***                         0
--- SQLINES DEMO ***                         1
--- SQLINES DEMO ***                         0
--- SQLINES DEMO ***  TYPE                   0
--- SQLINES DEMO ***  TYPE                   0
--- SQLINES DEMO ***  TYPE BODY              0
--- SQLINES DEMO ***                         0
--- SQLINES DEMO ***                         0
--- SQLINES DEMO ***                         0
--- SQLINES DEMO ***                         0
--- SQLINES DEMO ***                         0
--- SQLINES DEMO ***                         0
--- SQLINES DEMO ***                         0
--- SQLINES DEMO *** EGMENT                  0
--- SQLINES DEMO ***                         1
--- SQLINES DEMO *** ED VIEW                 0
--- SQLINES DEMO *** ED VIEW LOG             0
--- SQLINES DEMO ***                         0
--- SQLINES DEMO ***                         0
--- SQLINES DEMO ***                         0
--- 
--- SQLINES DEMO ***                         0
--- SQLINES DEMO ***                         0
--- 
--- SQLINES DEMO ***                         0
--- 
--- SQLINES DEMO ***                         0
--- SQLINES DEMO *** A                       0
--- SQLINES DEMO *** T                       0
--- 
--- SQLINES DEMO ***                         0
--- SQLINES DEMO ***                         0
+ALTER TABLE elecciones.detalle_voto MODIFY COLUMN id int auto_increment NOT NULL;
 
 `;

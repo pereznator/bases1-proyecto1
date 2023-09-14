@@ -3,8 +3,8 @@
 <createdBy>jorge</createdBy>
 <createdTime>2023-09-14 04:20:25 UTC</createdTime>
 <ownerDesignName>modeloLogico</ownerDesignName>
-<referredTableLongName>Candidato</referredTableLongName>
-<deleteRule>NO ACTION</deleteRule>
+<referredTableLongName>CANDIDATO</referredTableLongName>
+<deleteRule>CASCADE</deleteRule>
 <referredTableID>8CF9078A-3A67-DB08-FAB2-599EE7AA609F</referredTableID>
 <keyObject>CF67EA6F-F36E-748D-DF8B-EDEAB9B7CD7C</keyObject>
 <referredKeyID>CF67EA6F-F36E-748D-DF8B-EDEAB9B7CD7C</referredKeyID>

@@ -18,6 +18,7 @@ import { Ciudadano } from "../domain/ciudadano";
 import { Candidato } from "../domain/candidato";
 import { Voto } from "../domain/voto";
 import { sqlInsertarRegistros } from "../../db/scripts/insertarRegistros";
+import { DetalleVoto } from "../domain/detalleVoto";
 
 class ConfigRepo {
   async crearModelo(): Promise<any> {
@@ -102,21 +103,47 @@ class ConfigRepo {
   }
 
   async cargarTablas(): Promise<void> {
-    // const departamentos = await this.obtenerDepartamentosDeTablaTemporal();
-    // await this.crearDepartamentos(departamentos);
-    // const cargos = await this.obtenerCargosDeTablaTemporal();
-    // await this.crearCargos(cargos);
-    // const partidos = await this.obtenerPartidosDeTablaTemporal();
-    // await this.crearPartidos(partidos);
-    // const mesas = await this.obtenerMesasDeTablaTemporal();
-    // await this.crearMesas(mesas);
-    // const ciudadanos = await this.obtenerCiudadanosDeTablaTemporal();
-    // await this.crearCiudadanos(ciudadanos);
-    // const candidatos = await this.obtenerCandidatosDeTablaTemporal();
-    // await this.crearCandidatos(candidatos);
+    const departamentos = await this.obtenerDepartamentosDeTablaTemporal();
+    await this.crearDepartamentos(departamentos);
+    const cargos = await this.obtenerCargosDeTablaTemporal();
+    await this.crearCargos(cargos);
+    const partidos = await this.obtenerPartidosDeTablaTemporal();
+    await this.crearPartidos(partidos);
+    const mesas = await this.obtenerMesasDeTablaTemporal();
+    await this.crearMesas(mesas);
+    const ciudadanos = await this.obtenerCiudadanosDeTablaTemporal();
+    await this.crearCiudadanos(ciudadanos);
+    const candidatos = await this.obtenerCandidatosDeTablaTemporal();
+    await this.crearCandidatos(candidatos);
     const votos = await this.obtenerVotosDeTablaTemporal();
-    console.log(votos);
-    await this.crearVotos(votos);
+
+    const votosPorId = {};
+    votos.map(voto => {
+      if (votosPorId[voto.id.toValue()]) {
+        votosPorId[voto.id.toValue()].push(voto);
+      } else {
+        votosPorId[voto.id.toValue()] = [voto];
+      }
+    });
+
+    const detalles: DetalleVoto[] = [];
+    const votosAIngresar: Voto[] = [];
+
+    const votosOrdenados = Object.values(votosPorId);
+    votosOrdenados.map((votosHechosPorPersona: Voto[]) => {
+      votosAIngresar.push(votosHechosPorPersona[0]);
+      votosHechosPorPersona.map((voto: Voto) => {
+        const detalle = DetalleVoto.create({
+          votoId: voto.id,
+          candidatoId: voto.props.candidatoId
+        }, new UniqueEntityID());
+        detalles.push(detalle.getValue());
+      });
+    });
+
+    await this.crearVotos(votosAIngresar);
+
+    await this.crearDetallesVotos(detalles);
   }
 
   async obtenerDepartamentosDeTablaTemporal(): Promise<Departamento[]> {
@@ -207,6 +234,12 @@ class ConfigRepo {
   async crearVotos(votos: Voto[]): Promise<any> {
     const votosRaw = votos.map(voto => Voto.toRaw(voto)).join(",\n");
     const sql = sqlInsertarRegistros(INDICES_PARA_TEMPORALES.VOTACIONES, votosRaw);
+    await database.connection.query(sql);
+  }
+  
+  async crearDetallesVotos(detalles: DetalleVoto[]): Promise<any> {
+    const detallesRaw = detalles.map(detalle => DetalleVoto.toRaw(detalle)).join(",\n");
+    const sql = sqlInsertarRegistros(INDICES_PARA_TEMPORALES.DETALLES_VOTOS, detallesRaw);
     await database.connection.query(sql);
   }
 

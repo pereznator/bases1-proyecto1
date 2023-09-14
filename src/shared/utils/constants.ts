@@ -6,6 +6,7 @@ export const TABLAS = {
   CIUDADANO: 'ciudadano',
   CANDIDATO: 'candidato',
   VOTO: 'voto',
+  DETALLE_VOTO: "detalle_voto",
   TEMPORAL: 'temporal',
 }
 
@@ -27,6 +28,7 @@ export const INDICES_PARA_TEMPORALES = {
   CIUDADANOS: 4,
   CANDIDATOS: 5,
   VOTACIONES: 6,
+  DETALLES_VOTOS: 7,
 };
 
 export const ENCABEZADOS = {

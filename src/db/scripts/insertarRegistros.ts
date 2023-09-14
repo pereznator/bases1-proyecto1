@@ -13,5 +13,6 @@ const ATRIBUTOS = [
   "id, id_departamento",
   "dpi, nombre, apellido, direccion, telefono, edad, genero",
   "id, nombres, fecha_nacimiento, id_partido, id_cargo",
-  "id, id_candidato, dpi, id_mesa, fecha_hora",
+  "id, dpi, id_mesa, fecha_hora",
+  "id_voto, id_candidato",
 ];
