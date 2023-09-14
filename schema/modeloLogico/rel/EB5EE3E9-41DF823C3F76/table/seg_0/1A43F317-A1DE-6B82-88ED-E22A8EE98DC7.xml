@@ -1,0 +1,83 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="1A43F317-A1DE-6B82-88ED-E22A8EE98DC7" name="DETALLE_VOTO">
+<createdBy>jorge</createdBy>
+<createdTime>2023-09-14 04:01:31 UTC</createdTime>
+<ownerDesignName>modeloLogico</ownerDesignName>
+<ordsAlias>table_9</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="83B18179-FCDD-59EE-F313-3EC999371877">
+<createdBy>jorge</createdBy>
+<createdTime>2023-09-14 04:17:53 UTC</createdTime>
+<ownerDesignName>modeloLogico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="id_voto" id="4B865727-630A-FC3C-9D28-AA929901630F">
+<createdBy>jorge</createdBy>
+<createdTime>2023-09-14 04:03:19 UTC</createdTime>
+<ownerDesignName>modeloLogico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="62D92724-F497-ED6A-FD15-27D97BF924A7" referredColumn="BE121D1B-0526-6955-487C-A76FEED42051"/>
+</associations>
+</Column>
+<Column name="id_candidato" id="4B612771-FBBE-9377-ABA5-DC60DCD0B9C1">
+<createdBy>jorge</createdBy>
+<createdTime>2023-09-14 04:20:25 UTC</createdTime>
+<ownerDesignName>modeloLogico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="EE280B81-01DE-4E30-D352-5672B1201BA8" referredColumn="544381B9-EB90-52D8-691F-588CDCACE94E"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="C1082BB0-7C19-13DF-CA94-23E2BD88EC12" name="detalle_voto_PK">
+<createdBy>jorge</createdBy>
+<createdTime>2023-09-14 04:03:43 UTC</createdTime>
+<ownerDesignName>modeloLogico</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="83B18179-FCDD-59EE-F313-3EC999371877"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="47837F07-08DB-9806-806F-A01E0B51B904" name="detalle_voto_Voto_FK">
+<createdBy>jorge</createdBy>
+<createdTime>2023-09-14 04:03:19 UTC</createdTime>
+<ownerDesignName>modeloLogico</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4B865727-630A-FC3C-9D28-AA929901630F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4E6E585B-9D95-30ED-2E6E-FD27121478C5" name="detalle_voto_Candidato_FK">
+<createdBy>jorge</createdBy>
+<createdTime>2023-09-14 04:20:25 UTC</createdTime>
+<ownerDesignName>modeloLogico</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4B612771-FBBE-9377-ABA5-DC60DCD0B9C1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

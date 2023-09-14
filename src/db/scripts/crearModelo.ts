@@ -14,7 +14,7 @@ export const sqlCrearModelo = `
 CREATE TABLE candidato (
     id               INTEGER NOT NULL,
     nombres          VARCHAR(225) NOT NULL,
-    fecha_nacimiento DATETIME NOT NULL,
+    fecha_nacimiento DATE NOT NULL,
     id_partido       INTEGER NOT NULL,
     id_cargo         INTEGER NOT NULL
 );
@@ -31,7 +31,7 @@ ALTER TABLE cargo ADD CONSTRAINT cargo_pk PRIMARY KEY ( id );
 
 -- SQLINES LICENSE FOR EVALUATION USE ONLY
 CREATE TABLE ciudadano (
-    dpi       INTEGER NOT NULL,
+    dpi       VARCHAR(20) NOT NULL,
     nombre    VARCHAR(225) NOT NULL,
     apellido  VARCHAR(225) NOT NULL,
     direccion VARCHAR(225) NOT NULL,
@@ -63,7 +63,7 @@ CREATE TABLE partido (
     id        INTEGER NOT NULL,
     nombre    VARCHAR(225) NOT NULL,
     siglas    VARCHAR(225) NOT NULL,
-    fundacion DATETIME NOT NULL
+    fundacion DATE NOT NULL
 );
 
 ALTER TABLE partido ADD CONSTRAINT partido_pk PRIMARY KEY ( id );
@@ -71,7 +71,7 @@ ALTER TABLE partido ADD CONSTRAINT partido_pk PRIMARY KEY ( id );
 -- SQLINES LICENSE FOR EVALUATION USE ONLY
 CREATE TABLE temporal (
     id                         INTEGER NOT NULL,
-    tipo                       VARCHAR(225) NOT NULL,
+    tipo                       INTEGER NOT NULL,
     id_departamento            INTEGER,
     departamento               VARCHAR(225),
     id_mesa                    INTEGER,
@@ -80,8 +80,8 @@ CREATE TABLE temporal (
     id_partido                 INTEGER,
     nombre_partido             VARCHAR(225),
     siglas_partido             VARCHAR(225),
-    fundacion_partido          DATETIME,
-    dpi                        INTEGER,
+    fundacion_partido          DATE,
+    dpi                        VARCHAR(20),
     nombre_ciudadano           VARCHAR(225),
     apellido_ciudadano         VARCHAR(225),
     direccion_ciudadano        VARCHAR(225),
@@ -90,22 +90,24 @@ CREATE TABLE temporal (
     genero_ciudadano           CHAR(1),
     id_candidato               INTEGER,
     nombres_candidato          VARCHAR(225),
-    fecha_nacimiento_candidato DATETIME,
+    fecha_nacimiento_candidato DATE,
     id_voto                    INTEGER,
-    fecha_hora_voto            DATETIME(6)
+    fecha_hora_voto            DATE
 );
 
 ALTER TABLE temporal ADD CONSTRAINT temporal_pk PRIMARY KEY ( id );
 
 -- SQLINES LICENSE FOR EVALUATION USE ONLY
 CREATE TABLE voto (
+    id           INTEGER NOT NULL,
     id_candidato INTEGER NOT NULL,
-    dpi          INTEGER NOT NULL,
+    dpi          VARCHAR(20) NOT NULL,
     id_mesa      INTEGER NOT NULL,
-    fecha_hora   DATETIME(6) NOT NULL
+    fecha_hora   DATETIME NOT NULL
 );
 
-ALTER TABLE voto ADD CONSTRAINT voto_pk PRIMARY KEY ( id_candidato,
+ALTER TABLE voto ADD CONSTRAINT voto_pk PRIMARY KEY ( id,
+                                                      id_candidato,
                                                       dpi );
 
 ALTER TABLE candidato

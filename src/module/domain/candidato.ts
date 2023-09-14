@@ -1,3 +1,4 @@
+import moment from "moment";
 import { Result } from "../../shared/core/result";
 import { Entity } from "../../shared/domain/entity";
 import { UniqueEntityID } from "../../shared/domain/uniqueEntityId";
@@ -5,7 +6,7 @@ import { Guard } from "../../shared/utils/guard";
 
 export interface ICandidatoProps {
   nombre: string;
-  fechaNacimiento: string;
+  fechaNacimiento: Date;
   partidoId: UniqueEntityID;
   cargoId: UniqueEntityID;
 }
@@ -27,6 +28,21 @@ export class Candidato extends Entity<ICandidatoProps> {
       return Result.fail(candidatoValidation.getErrorValue());
     }
     return Result.ok(new Candidato(props, id));
+  }
+
+  public static toDomain(raw: any): Candidato {
+    const props: ICandidatoProps = {
+      nombre: raw.nombre,
+      fechaNacimiento: new Date(raw.fecha_nacimiento),
+      partidoId: new UniqueEntityID(raw.id_partido),
+      cargoId: new UniqueEntityID(raw.id_cargo),
+    };
+    const result = Candidato.create(props, new UniqueEntityID(raw.id));
+    return result.isSuccess ? result.getValue() : null;
+  }
+
+  public static toRaw(candidato: Candidato): string {
+    return `(${candidato.id.toValue()}, '${candidato.props.nombre}', '${moment(candidato.props.fechaNacimiento.toISOString()).format("YYYY-MM-DD HH:mm:ss")}', ${candidato.props.partidoId.toValue()}, ${candidato.props.cargoId.toValue()})`;
   }
 
 }

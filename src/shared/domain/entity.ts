@@ -1,4 +1,4 @@
-import { type UniqueEntityID } from "./uniqueEntityId";
+import { UniqueEntityID } from "./uniqueEntityId";
 
 /**
  * Class representing an Entity
@@ -12,9 +12,9 @@ export abstract class Entity<T> {
    * @param {T} props
    * @param {UniqueEntityID} id
    */
-  constructor(props: T, id: UniqueEntityID) {
+  constructor(props: T, id?: UniqueEntityID) {
     this.props = props;
-    this._id = id;
+    this._id = id ?? new UniqueEntityID();
   }
 
   /**
