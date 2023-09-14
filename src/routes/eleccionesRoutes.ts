@@ -40,7 +40,7 @@ eleccionesRouter.get("/consulta1", (req: Request, res: Response) => {
 });
 
 eleccionesRouter.get("/consulta2", (req: Request, res: Response) => {
-  return listarNumeroDeCandidatosController.excecute(req, res);
+  return listarCantidadDeCandidatosPorPartidoController.excecute(req, res);
 });
 
 eleccionesRouter.get("/consulta3", (req: Request, res: Response) => {
@@ -48,7 +48,7 @@ eleccionesRouter.get("/consulta3", (req: Request, res: Response) => {
 });
 
 eleccionesRouter.get("/consulta4", (req: Request, res: Response) => {
-  return listarCantidadDeCandidatosPorPartidoController.excecute(req, res);
+  return listarNumeroDeCandidatosController.excecute(req, res);
 });
 
 eleccionesRouter.get("/consulta5", (req: Request, res: Response) => {
