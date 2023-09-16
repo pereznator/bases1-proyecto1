@@ -7,9 +7,7 @@ export class CrearTablasController extends BaseController {
 
   protected async handle(req: Request, res: Response): Promise<any> {
     try {
-      //await database.startTransaction();
       await configRepo.crearModelo();
-      //await database.commitTransaction();
       return this.ok(res, "Modelo creado exitosamente.");
     } catch (err) {
       console.error(err);
