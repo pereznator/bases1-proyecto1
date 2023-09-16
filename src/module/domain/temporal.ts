@@ -127,7 +127,7 @@ export class Temporal extends Entity<ITemporalProps> {
         raw = `(${this.props.tipo}, NULL, NULL, NULL, NULL, NULL, ${this.props.idPartido.toValue()}, '${this.props.nombrePartido}', '${this.props.siglasPartido}', '${moment(this.props.fundacionPartido.toISOString()).format("YYYY-MM-DD HH:mm:ss")}', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)`;
         break;
       case INDICES_PARA_TEMPORALES.VOTACIONES:
-        raw = `(${this.props.tipo}, NULL, NULL, ${this.props.idMesa.toValue()}, NULL, NULL, NULL, NULL, NULL, NULL, ${this.props.dpi.toValue()}, NULL, NULL, NULL, NULL, NULL, NULL, ${this.props.idCandidato.toValue()}, NULL, NULL, ${this.props.idVoto.toValue()}, '${moment(this.props.fechaHoraVoto.toISOString()).format("YYYY-MM-DD HH:mm:ss")}')`;
+        raw = `(${this.props.tipo}, NULL, NULL, ${this.props.idMesa.toValue()}, NULL, NULL, NULL, NULL, NULL, NULL, ${this.props.dpi.toValue()}, NULL, NULL, NULL, NULL, NULL, NULL, ${this.props.idCandidato.toValue()}, NULL, NULL, ${this.props.idVoto.toValue()}, '${moment.utc(this.props.fechaHoraVoto.toISOString()).format("YYYY-MM-DD HH:mm:ss")}')`;
         break;
     }
     return raw;

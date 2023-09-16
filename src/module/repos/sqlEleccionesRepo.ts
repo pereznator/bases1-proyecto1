@@ -4,9 +4,12 @@ import { AlcaldePorPartido, sqlListarNombresDeAlcaldes } from "../../db/scripts/
 import { NumeroDeDiputadosPorPartido, sqlNumeroDeDiputadosPorPartido } from "../../db/scripts/listarNumeroDeDiputadosPorPartido";
 import { PresidentesYVicepresidentes, sqlListarPresidentesYVicepresidentes } from "../../db/scripts/listarPresidentesYVicepresidentes";
 import { NumeroDeCandidatosPorPartido, sqlNumeroDeCandidatosPorPartido } from "../../db/scripts/numeroDeCandidatosPorPartido";
+import { sqlTop5Horas, topHora } from "../../db/scripts/tip5HoraMasConcurrida";
 import { TopPresidentesVotados, sqlTop10PresidentesMasVotados } from "../../db/scripts/top10CandidatosMasVotados";
 import { TopEdad, sqlTop10Edades } from "../../db/scripts/top10Edades";
+import { TopMesas, sqlTop5Mesas } from "../../db/scripts/top5Mesas";
 import { VotosPorDepartamento, sqlVotosPorDepartamento } from "../../db/scripts/votosPorDepartamento";
+import { VotosPorGenero, sqlVotosPorGener } from "../../db/scripts/votosPorGenero";
 
 class SqlEleccionesRepo {
   async listartPresidentesYVicepresidentesPorPartido(): Promise<PresidentesYVicepresidentes[]> {
@@ -104,6 +107,46 @@ class SqlEleccionesRepo {
     });
     return lista;
   }
+  
+  async listarTop5Mesas(): Promise<TopMesas[]> {
+    const respuesta = await database.connection.query(sqlTop5Mesas);
+    const lista: TopMesas[] = Object.values(respuesta[0]).map(record => {
+      const formato: TopMesas = {
+        mesa: record.Mesa,
+        departamento: record.Departamento,
+        votos: record.Votos
+      };
+      return formato;
+    });
+    return lista;
+  }
+  
+  async listarTop5Horas(): Promise<topHora[]> {
+    const respuesta = await database.connection.query(sqlTop5Horas);
+    const lista: topHora[] = Object.values(respuesta[0]).map(record => {
+      const formato: topHora = {
+        hora: record.Hora,
+        votos: record.Votos
+      };
+      return formato;
+    });
+    return lista;
+  }
+  
+  async listarVotosPorGenero(): Promise<VotosPorGenero[]> {
+    const respuesta = await database.connection.query(sqlVotosPorGener);
+    const lista: VotosPorGenero[] = Object.values(respuesta[0]).map(record => {
+      const formato: VotosPorGenero = {
+        genero: record.Genero,
+        votos: record.Votos
+      };
+      return formato;
+    });
+    return lista;
+  }
+
+
+
 }
 
 export const sqlEleccionesRepo = new SqlEleccionesRepo();
